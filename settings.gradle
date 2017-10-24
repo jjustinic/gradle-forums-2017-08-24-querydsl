@@ -1,0 +1,4 @@
+rootProject.name = 'scphantm'
+include 'myappCommon'
+include 'myappEntity'
+include 'myappRepository'

@@ -1,0 +1,24 @@
+allprojects {
+    apply plugin: 'java'
+
+    repositories {
+        jcenter()
+    }
+}
+
+project(":myappEntity") {
+  dependencies {
+    compile project(":myappCommon")
+
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '4.2.21.Final'
+    compile group: 'org.springframework', name: 'spring-beans', version: '4.3.12.RELEASE'
+    compile("com.mysema.querydsl:querydsl-jpa:3.7.4")
+    compile("com.mysema.querydsl:querydsl-apt:3.7.4:jpa")
+  }
+}
+
+project(":myappRepository") {
+    dependencies {
+        compile project(":myappEntity")
+    }
+}
